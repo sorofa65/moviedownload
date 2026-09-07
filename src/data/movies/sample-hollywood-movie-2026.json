@@ -1,37 +1,24 @@
 {
-  "slug": "addicted-to-her-lies-the-godfather-takes-the-bait",
-  "title": "Addicted to Her Lies : The Godfather Takes the Bait",
+  "slug": "sample-hollywood-movie-2026",
+  "title": "Sample Hollywood Movie",
   "year": 2026,
-  "category": "short-drama",
-  "genre": ["Drama", "Romance", "Thriller"],
-  "language": "Mandarin",
-  "rating": 8.4,
-  "posterImage": "https://i.ibb.co.com/rKWtr14C/856x480f.jpg",
-  "bannerImage": "https://i.ibb.co.com/rKWtr14C/856x480f.jpg",
-  "shortDescription": "Caught in a web of deceit and passion, a powerful godfather falls into a carefully crafted trap—only to realize he is addicted to her dangerous lies.",
-  "screenshots": [
-    "https://i.ibb.co.com/rKWtr14C/856x480f.jpg"
-  ],
-  "videoEmbedUrl": "https://hgcloud.to/e/vpvli7zs3tvm",
-  "review": "A gripping short drama packed with intense power dynamics, romantic suspense, and high-stakes twists that keep viewers hooked till the very end.",
-  "cast": ["Lead Actor", "Lead Actress"],
+  "category": "hollywood",
+  "genre": ["Sci-Fi", "Thriller"],
+  "language": "English",
+  "rating": 7.5,
+  "posterImage": "/images/movies/sample-hollywood-poster.jpg",
+  "bannerImage": "/images/movies/sample-hollywood-banner.jpg",
+  "shortDescription": "A placeholder entry showing the JSON structure for a Hollywood release.",
+  "screenshots": [],
+  "videoEmbedUrl": "",
+  "review": "Replace this text with your real review. Keep paragraphs short for readability and SEO.",
+  "cast": ["Actor One", "Actor Two"],
   "director": "Director Name",
   "releaseDate": "2026-03-01",
   "watchLinks": [
-    {
-      "platform": "Watch Direct",
-      "url": "https://bysesayeveum.com/d/da4lcp1nokmw/tool-f5add48c08b34e969c963423ea3681c3",
-      "type": "free",
-      "adEnabled": false
-    },
-    {
-      "platform": "HGCloud Player",
-      "url": "https://hgcloud.to/e/vpvli7zs3tvm",
-      "type": "embed",
-      "adEnabled": false
-    }
+    { "platform": "Netflix", "url": "https://www.netflix.com/", "type": "subscription", "adEnabled": false }
   ],
-  "trailerUrl": "https://hgcloud.to/e/vpvli7zs3tvm",
-  "seoTitle": "Addicted to Her Lies : The Godfather Takes the Bait - Watch Full Series Online",
-  "seoDescription": "Stream 'Addicted to Her Lies : The Godfather Takes the Bait' full drama online. Get direct streaming links, embed player, and story details."
+  "trailerUrl": "",
+  "seoTitle": "Sample Hollywood Movie (2026) Review & Where to Watch",
+  "seoDescription": "Full review, ratings and legal streaming links for Sample Hollywood Movie (2026)."
 }

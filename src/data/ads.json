@@ -8,13 +8,13 @@
     "enabled": true,
     "_comment": "Controls the interstitial page that opens in a NEW TAB when someone clicks Watch Now, before sending them to the real platform. The original site tab stays open on the movie page. If adsEnabled (above) is false, this is skipped entirely regardless of this value.",
     "countdownSeconds": 5,
-    "code": "https://www.profitableratecpmnetwork.com/grwy9rvvgm?key=1f4035a06094a1a8e34679b4b26e487c"
+    "code": ""
   },
 
   "networkScripts": {
     "_comment": "Global network scripts (e.g. Adsterra 'Social Bar' or PropellerAds push script) that load once site-wide, placed before </body>.",
     "global": [
-      "<script type=\"text/javascript\" src=\"https://pl31236811.profitableratecpmnetwork.com/4c/25/cf/4c25cfdfecbbc1d902033a55db50752a.js\"></script>"
+      ""
     ]
   },
 
@@ -32,9 +32,9 @@
   },
 
   "stickyBottomAd": {
-    "enabled": true,
+    "enabled": false,
     "_comment": "A slim banner ad pinned to the bottom of the screen, always visible while browsing (classic 'sticky footer ad'). Has a small close (×) button — closing hides it only for that page view, standard behavior, not a dark pattern.",
-    "code": "<script type=\"text/javascript\">atOptions = { 'key' : 'd184c10ebfb28c8915cf71457f326965', 'format' : 'iframe', 'height' : 50, 'width' : 320, 'params' : {} };</script><script type=\"text/javascript\" src=\"https://www.highrevenueformat.com/d184c10ebfb28c8915cf71457f326965/invoke.js\"></script>"
+    "code": ""
   },
 
   "periodicTopAd": {
@@ -52,15 +52,15 @@
       "code": ""
     },
     "homeBetweenRows": {
-      "enabled": true,
+      "enabled": false,
       "label": "Native/banner ad injected after every 8 movie cards on homepage",
-      "code": "<script async=\"async\" data-cfasync=\"false\" src=\"https://pl31236869.profitableratecpmnetwork.com/78c30c2e488e45a6a9e7f2905046fe67/invoke.js\"></script><div id=\"container-78c30c2e488e45a6a9e7f2905046fe67\"></div>",
+      "code": "",
       "frequency": 8
     },
     "sidebar": {
-      "enabled": true,
+      "enabled": false,
       "label": "300x250 sidebar unit on movie detail pages",
-      "code": "<script type=\"text/javascript\">atOptions = { 'key' : 'f56d2abb9385496b1a55a9c62e87bf59', 'format' : 'iframe', 'height' : 250, 'width' : 300, 'params' : {} };</script><script type=\"text/javascript\" src=\"https://www.highrevenueformat.com/f56d2abb9385496b1a55a9c62e87bf59/invoke.js\"></script>"
+      "code": ""
     },
     "inArticleTop": {
       "enabled": false,
@@ -73,9 +73,9 @@
       "code": ""
     },
     "beforeWatchButton": {
-      "enabled": true,
+      "enabled": false,
       "label": "High-visibility slot just above the real Watch Now buttons (best CTR spot — must stay visually separate from the real buttons)",
-      "code": "<script async=\"async\" data-cfasync=\"false\" src=\"https://pl31236869.profitableratecpmnetwork.com/78c30c2e488e45a6a9e7f2905046fe67/invoke.js\"></script><div id=\"container-78c30c2e488e45a6a9e7f2905046fe67\"></div>"
+      "code": ""
     },
     "footerBanner": {
       "enabled": false,

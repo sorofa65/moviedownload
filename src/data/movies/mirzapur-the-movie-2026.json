@@ -1,0 +1,29 @@
+{
+  "slug": "mirzapur-the-movie-2026",
+  "title": "Mirzapur: The Movie",
+  "year": 2026,
+  "category": "web-series",
+  "genre": ["Action", "Crime", "Drama"],
+  "language": "Hindi",
+  "rating": 8.2,
+  "posterImage": "/images/movies/mirzapur-the-movie-poster.jpg",
+  "bannerImage": "/images/movies/mirzapur-the-movie-banner.jpg",
+  "shortDescription": "The Mirzapur saga concludes on the big screen with Guddu and Golu's final war for the throne.",
+  "screenshots": [
+    "/images/movies/mirzapur-screenshot-1.jpg",
+    "/images/movies/mirzapur-screenshot-2.jpg",
+    "/images/movies/mirzapur-screenshot-3.jpg"
+  ],
+  "videoEmbedUrl": "https://www.youtube.com/embed/your-official-trailer-id",
+  "review": "Mirzapur: The Movie brings the long-running crime saga to a cinematic close. The pacing is tighter than the series, the performances remain the show's biggest strength, and the final act delivers the payoff fans have waited years for. Not a perfect film, but a satisfying send-off.",
+  "cast": ["Pankaj Tripathi", "Ali Fazal", "Divyenndu", "Shweta Tripathi"],
+  "director": "Gurmmeet Singh",
+  "releaseDate": "2026-01-15",
+  "watchLinks": [
+    { "platform": "Amazon Prime Video", "url": "https://www.primevideo.com/", "type": "subscription", "adEnabled": true },
+    { "platform": "JioCinema", "url": "https://www.jiocinema.com/", "type": "subscription", "adEnabled": false }
+  ],
+  "trailerUrl": "",
+  "seoTitle": "Mirzapur: The Movie (2026) Review, Cast & Where to Watch",
+  "seoDescription": "Read our full spoiler-free review of Mirzapur: The Movie (2026), cast details, ratings, and official platforms where you can legally watch it online."
+}
