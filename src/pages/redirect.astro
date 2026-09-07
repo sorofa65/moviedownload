@@ -1,0 +1,78 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ads from '../data/ads.json';
+
+const showInterstitial = ads.adsEnabled && ads.redirectInterstitial.enabled;
+const countdown = ads.redirectInterstitial.countdownSeconds || 5;
+const adCode = ads.redirectInterstitial.code || '';
+---
+<Layout title="Redirecting..." noindex={true} canonicalPath="/redirect/">
+  <main class="wrap" id="wrap" data-show-interstitial={showInterstitial ? '1' : '0'} data-countdown={countdown}>
+    <div class="card">
+      <p class="brand">Taking you to your movie</p>
+      <h1 id="platform-name">Redirecting…</h1>
+
+      <div id="ad-zone" class="ad-zone" style="display:none">
+        <span class="ad-tag">Advertisement</span>
+        <div id="ad-code-mount"></div>
+      </div>
+
+      <p id="status">Please wait <span id="secs"></span>…</p>
+      <a id="continue-link" class="btn" href="#" style="display:none">Continue Now</a>
+      <p class="note">This tab will open your official streaming platform. The original review page stays open in your other tab.</p>
+    </div>
+  </main>
+</Layout>
+
+<script define:vars={{ adCode }}>
+  const wrap = document.getElementById('wrap');
+  const showAd = wrap.dataset.showInterstitial === '1';
+  let seconds = parseInt(wrap.dataset.countdown, 10) || 5;
+
+  const params = new URLSearchParams(window.location.search);
+  const dest = params.get('to');
+  const platform = params.get('platform') || 'streaming platform';
+
+  document.getElementById('platform-name').textContent = dest ? `Opening ${platform}` : 'Invalid link';
+
+  const secsEl = document.getElementById('secs');
+  const statusEl = document.getElementById('status');
+  const continueLink = document.getElementById('continue-link');
+  const adZone = document.getElementById('ad-zone');
+
+  if (!dest) {
+    statusEl.textContent = 'No destination provided.';
+  } else {
+    continueLink.href = dest;
+
+    if (showAd && adCode) {
+      adZone.style.display = 'block';
+      document.getElementById('ad-code-mount').innerHTML = adCode;
+    } else {
+      seconds = Math.min(seconds, 1); // skip long wait if ads are off
+    }
+
+    const tick = () => {
+      if (seconds <= 0) {
+        statusEl.style.display = 'none';
+        continueLink.style.display = 'inline-block';
+        window.location.href = dest;
+        return;
+      }
+      secsEl.textContent = seconds;
+      seconds -= 1;
+      setTimeout(tick, 1000);
+    };
+    tick();
+  }
+</script>
+
+<style>
+  .wrap { min-height: 100vh; display: flex; align-items: center; justify-content: center; background: var(--bg-soft); padding: 20px; }
+  .card { background: #fff; border: 1px solid var(--border); border-radius: var(--radius); padding: 32px; max-width: 460px; width: 100%; text-align: center; }
+  .brand { color: var(--text-soft); font-size: .82rem; text-transform: uppercase; letter-spacing: .06em; margin: 0 0 6px; }
+  h1 { font-size: 1.25rem; margin: 0 0 18px; }
+  .ad-zone { margin: 16px 0; padding: 8px; background: var(--bg-soft); border: 1px solid var(--border); border-radius: 8px; }
+  .ad-tag { display: block; font-size: .68rem; text-transform: uppercase; color: var(--text-soft); margin-bottom: 6px; }
+  .note { font-size: .78rem; color: var(--text-soft); margin-top: 18px; }
+</style>

@@ -1,0 +1,128 @@
+---
+import site from '../data/site.json';
+import AdScripts from '../components/AdScripts.astro';
+import TelegramPromo from '../components/TelegramPromo.astro';
+import StickyBottomAd from '../components/StickyBottomAd.astro';
+import PeriodicTopAd from '../components/PeriodicTopAd.astro';
+
+export interface Props {
+  title?: string;
+  description?: string;
+  ogImage?: string;
+  canonicalPath?: string; // e.g. "/movie/mirzapur-the-movie-2026/"
+  jsonLd?: object | object[];
+  noindex?: boolean;
+}
+
+const {
+  title,
+  description = site.description,
+  ogImage = site.defaultOgImage,
+  canonicalPath = '/',
+  jsonLd,
+  noindex = false
+} = Astro.props;
+
+const pageTitle = title
+  ? site.seoDefaults.titleTemplate.replace('%s', title)
+  : `${site.name} — ${site.tagline}`;
+
+const canonicalUrl = new URL(canonicalPath, site.url).toString();
+const ogImageUrl = new URL(ogImage, site.url).toString();
+
+const ldBlocks = Array.isArray(jsonLd) ? jsonLd : jsonLd ? [jsonLd] : [];
+
+// Base organization schema always included (helps AEO/GEO — AI answer engines
+// and generative results pick entity info from this).
+const orgSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": site.name,
+  "url": site.url,
+  "logo": new URL('/images/logo.png', site.url).toString(),
+  "sameAs": Object.values(site.social).filter(Boolean)
+};
+---
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" href="/favicon.png" />
+  <meta name="theme-color" content={site.themeColor} />
+
+  <title>{pageTitle}</title>
+  <meta name="description" content={description} />
+  <meta name="keywords" content={site.keywords.join(', ')} />
+  <link rel="canonical" href={canonicalUrl} />
+  {noindex && <meta name="robots" content="noindex, nofollow" />}
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content={site.name} />
+  <meta property="og:title" content={pageTitle} />
+  <meta property="og:description" content={description} />
+  <meta property="og:image" content={ogImageUrl} />
+  <meta property="og:url" content={canonicalUrl} />
+  <meta property="og:locale" content={site.seoDefaults.locale} />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content={site.seoDefaults.twitterHandle} />
+  <meta name="twitter:title" content={pageTitle} />
+  <meta name="twitter:description" content={description} />
+  <meta name="twitter:image" content={ogImageUrl} />
+
+  <!-- JSON-LD structured data (SEO + AEO/GEO: helps AI/answer engines cite this page) -->
+  <script type="application/ld+json" set:html={JSON.stringify(orgSchema)} />
+  {ldBlocks.map((block) => (
+    <script type="application/ld+json" set:html={JSON.stringify(block)} />
+  ))}
+
+  <link rel="alternate" type="application/rss+xml" title={`${site.name} RSS`} href="/rss.xml" />
+  <link rel="sitemap" href="/sitemap-index.xml" />
+
+  <style is:global>
+    :root {
+      --bg: #ffffff;
+      --bg-soft: #f4f5f7;
+      --card-bg: #ffffff;
+      --text: #1c1e22;
+      --text-soft: #6b7280;
+      --border: #e5e7eb;
+      --brand: #e63946;
+      --brand-dark: #c72836;
+      --badge-bg: #111318;
+      --radius: 10px;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      line-height: 1.55;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+    .container { max-width: 1180px; margin: 0 auto; padding: 0 20px; }
+    .btn {
+      display: inline-block;
+      padding: 12px 22px;
+      border-radius: var(--radius);
+      background: var(--brand);
+      color: #fff;
+      font-weight: 600;
+      transition: background .15s ease;
+    }
+    .btn:hover { background: var(--brand-dark); }
+  </style>
+</head>
+<body>
+  <slot />
+  <PeriodicTopAd />
+  <StickyBottomAd />
+  <TelegramPromo />
+  <AdScripts />
+</body>
+</html>

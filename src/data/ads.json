@@ -1,0 +1,86 @@
+{
+  "_comment": "Paste your ad network's raw HTML/JS snippet as a string in each slot. Leave empty string to hide a slot. Only standard, clearly-labeled placements are used — no fake-close-button or fake-play-button overlays, since those violate ad network policies (Adsterra/PropellerAds/etc.) and can get your account banned.",
+
+  "adsEnabled": true,
+  "_adsEnabled_comment": "MASTER SWITCH. Set to false to instantly turn off every ad slot, the global network script, AND the Watch-Now interstitial page site-wide — no code edit needed, just flip this and rebuild/redeploy.",
+
+  "redirectInterstitial": {
+    "enabled": true,
+    "_comment": "Controls the interstitial page that opens in a NEW TAB when someone clicks Watch Now, before sending them to the real platform. The original site tab stays open on the movie page. If adsEnabled (above) is false, this is skipped entirely regardless of this value.",
+    "countdownSeconds": 5,
+    "code": "https://www.profitableratecpmnetwork.com/grwy9rvvgm?key=1f4035a06094a1a8e34679b4b26e487c"
+  },
+
+  "networkScripts": {
+    "_comment": "Global network scripts (e.g. Adsterra 'Social Bar' or PropellerAds push script) that load once site-wide, placed before </body>.",
+    "global": [
+      "<script type=\"text/javascript\" src=\"https://pl31236811.profitableratecpmnetwork.com/4c/25/cf/4c25cfdfecbbc1d902033a55db50752a.js\"></script>"
+    ]
+  },
+
+  "telegramPromo": {
+    "enabled": true,
+    "_comment": "Popup that invites visitors to join your Telegram channel(s) for update notifications. Shows once per visitor per `remindAfterHours` window (uses localStorage, not cookies) so it doesn't nag on every page. 'Maybe Later' closes it; 'Join Channel' opens the channel link in a new tab.",
+    "delaySeconds": 4,
+    "remindAfterHours": 24,
+    "title": "📢 Get Instant Movie Updates",
+    "message": "Join our Telegram channel to get notified the moment a new movie or episode review is posted.",
+    "buttonText": "Join Channel",
+    "channels": [
+      { "name": "Main Updates Channel", "url": "https://t.me/your_channel_here" }
+    ]
+  },
+
+  "stickyBottomAd": {
+    "enabled": true,
+    "_comment": "A slim banner ad pinned to the bottom of the screen, always visible while browsing (classic 'sticky footer ad'). Has a small close (×) button — closing hides it only for that page view, standard behavior, not a dark pattern.",
+    "code": "<script type=\"text/javascript\">atOptions = { 'key' : 'd184c10ebfb28c8915cf71457f326965', 'format' : 'iframe', 'height' : 50, 'width' : 320, 'params' : {} };</script><script type=\"text/javascript\" src=\"https://www.highrevenueformat.com/d184c10ebfb28c8915cf71457f326965/invoke.js\"></script>"
+  },
+
+  "periodicTopAd": {
+    "enabled": false,
+    "_comment": "A banner that slides down from the top every `intervalSeconds`, stays visible for `visibleSeconds`, then slides back up — repeats on a timer instead of appearing once. Good for high-impression placements without covering content permanently.",
+    "intervalSeconds": 45,
+    "visibleSeconds": 8,
+    "code": ""
+  },
+
+  "slots": {
+    "headerBanner": {
+      "enabled": false,
+      "label": "728x90 / responsive banner under header",
+      "code": ""
+    },
+    "homeBetweenRows": {
+      "enabled": true,
+      "label": "Native/banner ad injected after every 8 movie cards on homepage",
+      "code": "<script async=\"async\" data-cfasync=\"false\" src=\"https://pl31236869.profitableratecpmnetwork.com/78c30c2e488e45a6a9e7f2905046fe67/invoke.js\"></script><div id=\"container-78c30c2e488e45a6a9e7f2905046fe67\"></div>",
+      "frequency": 8
+    },
+    "sidebar": {
+      "enabled": true,
+      "label": "300x250 sidebar unit on movie detail pages",
+      "code": "<script type=\"text/javascript\">atOptions = { 'key' : 'f56d2abb9385496b1a55a9c62e87bf59', 'format' : 'iframe', 'height' : 250, 'width' : 300, 'params' : {} };</script><script type=\"text/javascript\" src=\"https://www.highrevenueformat.com/f56d2abb9385496b1a55a9c62e87bf59/invoke.js\"></script>"
+    },
+    "inArticleTop": {
+      "enabled": false,
+      "label": "Ad shown right above the review text",
+      "code": ""
+    },
+    "inArticleBottom": {
+      "enabled": false,
+      "label": "Ad shown right below the review text, above watch links",
+      "code": ""
+    },
+    "beforeWatchButton": {
+      "enabled": true,
+      "label": "High-visibility slot just above the real Watch Now buttons (best CTR spot — must stay visually separate from the real buttons)",
+      "code": "<script async=\"async\" data-cfasync=\"false\" src=\"https://pl31236869.profitableratecpmnetwork.com/78c30c2e488e45a6a9e7f2905046fe67/invoke.js\"></script><div id=\"container-78c30c2e488e45a6a9e7f2905046fe67\"></div>"
+    },
+    "footerBanner": {
+      "enabled": false,
+      "label": "Banner above footer, site-wide",
+      "code": ""
+    }
+  }
+}
