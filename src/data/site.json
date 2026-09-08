@@ -1,13 +1,13 @@
 {
-  "name": "CineReview",
-  "tagline": "Honest Movie & Series Reviews",
+  "name": "TiktokDramaFull",
+  "tagline": "Complete Short Video Drama Series & Viral Reels Hub",
   "url": "https://example.com",
-  "logoText": "Cine",
-  "logoAccent": "Review",
+  "logoText": "Tiktok",
+  "logoAccent": "DramaFUll",
   "defaultOgImage": "/images/og-default.jpg",
   "themeColor": "#ffffff",
-  "description": "Independent reviews, ratings and where-to-watch guides for the latest Bollywood, Hollywood and regional movies & series.",
-  "keywords": ["movie review", "series review", "where to watch", "streaming guide", "ott release"],
+  "description": "Access full collections of short drama series, micro-movies, and TikTok drama reels. Stream all episodes back-to-back with HD quality, quick storytelling, and non-stop entertainment.",
+  "keywords": ["Tiktok Drama", "Tiktok drama download", "where to watch", "streaming guide", "ott release"],
   "social": {
     "facebook": "https://facebook.com/yourpage",
     "twitter": "https://twitter.com/yourpage",
@@ -18,7 +18,7 @@
     { "label": "Home", "href": "/" },
     { "label": "Bollywood", "href": "/category/bollywood/" },
     { "label": "Hollywood", "href": "/category/hollywood/" },
-    { "label": "Web Series", "href": "/category/web-series/" },
+    { "label": "Tiktok Series", "href": "/category/web-series/" },
     { "label": "Regional", "href": "/category/regional/" }
   ],
   "footer": {
