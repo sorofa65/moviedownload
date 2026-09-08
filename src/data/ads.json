@@ -14,7 +14,7 @@
   "networkScripts": {
     "_comment": "Global network scripts (e.g. Adsterra 'Social Bar' or PropellerAds push script) that load once site-wide, placed before </body>.",
     "global": [
-      "<script src="https://pl31241230.profitableratecpmnetwork.com/5f/17/4b/5f174b3d609e0ab159666ced87a724e2.js"></script>"
+      "<script src=\"https://pl31241230.profitableratecpmnetwork.com/5f/17/4b/5f174b3d609e0ab159666ced87a724e2.js\"></script>"
     ]
   },
 
