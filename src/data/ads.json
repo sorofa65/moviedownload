@@ -52,7 +52,7 @@
       "code": ""
     },
     "homeBetweenRows": {
-      "enabled": true,
+      "enabled": false,
       "label": "Native/banner ad injected after every 8 movie cards on homepage",
       "code": "<script async=\"async\" data-cfasync=\"false\" src=\"https://pl31236869.profitableratecpmnetwork.com/78c30c2e488e45a6a9e7f2905046fe67/invoke.js\"></script><div id=\"container-78c30c2e488e45a6a9e7f2905046fe67\"></div>",
       "frequency": 8
