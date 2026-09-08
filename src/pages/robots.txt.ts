@@ -6,7 +6,7 @@ export const GET: APIRoute = () => {
 Allow: /
 Disallow: /search/
 
-Sitemap: ${site.url}/sitemap-index.xml
+Sitemap: ${site.url}/sitemap.xml
 `;
   return new Response(body, { headers: { 'Content-Type': 'text/plain' } });
 };

@@ -35,7 +35,7 @@ Browser এ `http://localhost:4321` খুললে site দেখতে পা�
 ```bash
 npm run build
 ```
-`dist/` ফোল্ডারে পুরো static site তৈরি হবে — এর ভিতরে `sitemap-index.xml`, `robots.txt`, `llms.txt` auto generate হয়ে থাকবে।
+`dist/` ফোল্ডারে পুরো static site তৈরি হবে — এর ভিতরে `sitemap.xml`, `robots.txt`, `llms.txt` auto generate হয়ে থাকবে।
 
 ### Step 5: Deploy (যেকোনো একটা)
 - **Netlify**: drag-and-drop `dist/` folder, অথবা GitHub repo connect করে build command `npm run build`, publish dir `dist`
@@ -43,7 +43,7 @@ npm run build
 - **Cloudflare Pages**: build command `npm run build`, output dir `dist`
 
 Deploy হওয়ার পর Google Search Console এ sitemap submit করো:
-`https://yourdomain.com/sitemap-index.xml`
+`https://yourdomain.com/sitemap.xml`
 
 ---
 

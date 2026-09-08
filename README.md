@@ -13,7 +13,7 @@ npm run build     # production build -> dist/
 ```
 
 `npm run build`-er por auto generate hoy:
-- `dist/sitemap-index.xml` + `dist/sitemap-0.xml` (via @astrojs/sitemap)
+- `dist/sitemap.xml` (custom endpoint, kono external package lagbe na)
 - `dist/robots.txt`
 - `dist/llms.txt`
 - প্রতিটা movie/category page-e full meta tags, Open Graph, Twitter card,
