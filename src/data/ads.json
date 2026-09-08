@@ -38,7 +38,7 @@
   },
 
   "periodicTopAd": {
-    "enabled": true,
+    "enabled": false,
     "_comment": "A banner that slides down from the top every `intervalSeconds`, stays visible for `visibleSeconds`, then slides back up — repeats on a timer instead of appearing once. Good for high-impression placements without covering content permanently.",
     "intervalSeconds": 45,
     "visibleSeconds": 8,
@@ -47,7 +47,7 @@
 
   "slots": {
     "headerBanner": {
-      "enabled": true,
+      "enabled": false,
       "label": "728x90 / responsive banner under header",
       "code": "<script type=\"text/javascript\">atOptions = { 'key' : '96fe77361382a2a18787c9dc1aec76c1', 'format' : 'iframe', 'height' : 90, 'width' : 728, 'params' : {} };</script><script type=\"text/javascript\" src=\"https://www.highrevenueformat.com/96fe77361382a2a18787c9dc1aec76c1/invoke.js\"></script>"
     },
@@ -63,14 +63,14 @@
       "code": "<script type=\"text/javascript\">atOptions = { 'key' : 'f56d2abb9385496b1a55a9c62e87bf59', 'format' : 'iframe', 'height' : 250, 'width' : 300, 'params' : {} };</script><script type=\"text/javascript\" src=\"https://www.highrevenueformat.com/f56d2abb9385496b1a55a9c62e87bf59/invoke.js\"></script>"
     },
     "inArticleTop": {
-      "enabled": true,
+      "enabled": false,
       "label": "Ad shown right above the review text",
       "code": "<script async=\"async\" data-cfasync=\"false\" src=\"https://pl31236869.profitableratecpmnetwork.com/78c30c2e488e45a6a9e7f2905046fe67/invoke.js\"></script><div id=\"container-78c30c2e488e45a6a9e7f2905046fe67\"></div>"
     },
     "inArticleBottom": {
       "enabled": true,
       "label": "Ad shown right below the review text, above watch links",
-      "code": "<script type=\"text/javascript\">atOptions = { 'key' : 'f56d2abb9385496b1a55a9c62e87bf59', 'format' : 'iframe', 'height' : 250, 'width' : 300, 'params' : {} };</script><script type=\"text/javascript\" src=\"https://www.highrevenueformat.com/f56d2abb9385496b1a55a9c62e87bf59/invoke.js\"
+      "code": "<script type=\"text/javascript\">atOptions = { 'key' : 'f56d2abb9385496b1a55a9c62e87bf59', 'format' : 'iframe', 'height' : 250, 'width' : 300, 'params' : {} };</script><script type=\"text/javascript\" src=\"https://www.highrevenueformat.com/f56d2abb9385496b1a55a9c62e87bf59/invoke.js\"></script>"
     },
     "beforeWatchButton": {
       "enabled": true,
