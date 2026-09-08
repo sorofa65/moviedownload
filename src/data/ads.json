@@ -5,7 +5,7 @@
   "_adsEnabled_comment": "MASTER SWITCH. Set to false to instantly turn off every ad slot, the global network script, AND the Watch-Now interstitial page site-wide — no code edit needed, just flip this and rebuild/redeploy.",
 
   "redirectInterstitial": {
-    "enabled": true,
+    "enabled": false,
     "_comment": "Controls the interstitial page that opens in a NEW TAB when someone clicks Watch Now, before sending them to the real platform. The original site tab stays open on the movie page. If adsEnabled (above) is false, this is skipped entirely regardless of this value.",
     "countdownSeconds": 5,
     "code": "https://www.profitableratecpmnetwork.com/grwy9rvvgm?key=1f4035a06094a1a8e34679b4b26e487c"
@@ -19,7 +19,7 @@
   },
 
   "telegramPromo": {
-    "enabled": true,
+    "enabled": false,
     "_comment": "Popup that invites visitors to join your Telegram channel(s) for update notifications. Shows once per visitor per `remindAfterHours` window (uses localStorage, not cookies) so it doesn't nag on every page. 'Maybe Later' closes it; 'Join Channel' opens the channel link in a new tab.",
     "delaySeconds": 4,
     "remindAfterHours": 24,
