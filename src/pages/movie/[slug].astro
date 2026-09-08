@@ -80,7 +80,7 @@ const perLinkAdCode = ads.slots.beforeWatchButton?.code || '';
       <AdSlot name="inArticleTop" />
 
       <section id="info" class="block">
-        <h2>{movie.videoEmbedUrl ? 'Official Trailer' : 'Synopsis'}</h2>
+        <h2>{movie.videoEmbedUrl ? 'Watch Now Full' : 'Synopsis'}</h2>
         {movie.videoEmbedUrl && (
           <VideoEmbed url={movie.videoEmbedUrl} title={`${movie.title} — Official Video`} />
         )}
