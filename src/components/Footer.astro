@@ -1,0 +1,45 @@
+---
+import site from '../data/site.json';
+const year = new Date().getFullYear();
+---
+<footer class="site-footer">
+  <div class="container grid">
+    <div class="about">
+      <div class="logo"><span class="logo-main">{site.logoText}</span><span class="logo-accent">{site.logoAccent}</span></div>
+      <p>{site.footer.about}</p>
+      <div class="social">
+        {Object.entries(site.social).filter(([,v]) => v).map(([k, v]) => (
+          <a href={v} target="_blank" rel="noopener noreferrer">{k}</a>
+        ))}
+      </div>
+    </div>
+    {site.footer.columns.map((col) => (
+      <div class="col">
+        <h4>{col.title}</h4>
+        <ul>
+          {col.links.map((l) => (<li><a href={l.href}>{l.label}</a></li>))}
+        </ul>
+      </div>
+    ))}
+  </div>
+  <div class="bottom container">
+    <p>&copy; {year} {site.footer.copyrightName}. All rights reserved.</p>
+  </div>
+</footer>
+
+<style>
+  .site-footer { background: var(--bg-soft); border-top: 1px solid var(--border); margin-top: 60px; }
+  .grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 32px; padding: 48px 20px 24px; }
+  .logo { font-size: 1.3rem; font-weight: 800; margin-bottom: 10px; }
+  .logo-main { color: var(--text); }
+  .logo-accent { color: var(--brand); }
+  .about p { color: var(--text-soft); font-size: .9rem; max-width: 420px; }
+  .social { display: flex; gap: 12px; margin-top: 10px; }
+  .social a { font-size: .82rem; color: var(--brand); font-weight: 600; text-transform: capitalize; }
+  h4 { margin: 0 0 12px; font-size: .95rem; }
+  ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px; }
+  ul a { color: var(--text-soft); font-size: .9rem; }
+  ul a:hover { color: var(--brand); }
+  .bottom { border-top: 1px solid var(--border); padding: 16px 20px; font-size: .82rem; color: var(--text-soft); }
+  @media (max-width: 780px) { .grid { grid-template-columns: 1fr; } }
+</style>
