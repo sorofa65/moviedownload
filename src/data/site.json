@@ -1,0 +1,74 @@
+{
+  "name": "TiktokDramaFull",
+  "tagline": "Full Short-Drama Series & Vertical Video Hub",
+  "url": "https://yakub.blog",
+  "logoText": "Tiktok",
+  "logoAccent": "DramaFUll",
+  "defaultOgImage": "/images/og-default.jpg",
+  "themeColor": "#ffffff",
+  "description": "Watch short-form drama series and vertical video stories in one place, with full-video playback and episode counts.",
+  "keywords": [
+    "short drama",
+    "TikTok drama",
+    "vertical drama",
+    "short drama series",
+    "full short drama"
+  ],
+  "social": {
+    "facebook": "https://facebook.com/yourpage",
+    "twitter": "https://twitter.com/yourpage",
+    "instagram": "https://instagram.com/yourpage",
+    "youtube": ""
+  },
+  "menu": [
+    {
+      "label": "Home",
+      "href": "/"
+    },
+    {
+      "label": "Short Drama",
+      "href": "/category/short-drama/"
+    }
+  ],
+  "footer": {
+    "about": "A short-drama viewing hub focused on organized series pages and full-video playback. Only embed videos that you own or are authorized to publish.",
+    "columns": [
+      {
+        "title": "Browse",
+        "links": [
+          {
+            "label": "Short Drama",
+            "href": "/category/short-drama/"
+          }
+        ]
+      },
+      {
+        "title": "Site",
+        "links": [
+          {
+            "label": "About Us",
+            "href": "/about/"
+          },
+          {
+            "label": "Contact",
+            "href": "/contact/"
+          },
+          {
+            "label": "Privacy Policy",
+            "href": "/privacy-policy/"
+          },
+          {
+            "label": "Disclaimer",
+            "href": "/disclaimer/"
+          }
+        ]
+      }
+    ],
+    "copyrightName": "TiktokDramaFull"
+  },
+  "seoDefaults": {
+    "titleTemplate": "%s | TiktokDramaFull",
+    "locale": "en_US",
+    "twitterHandle": ""
+  }
+}
