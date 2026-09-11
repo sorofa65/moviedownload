@@ -1,0 +1,26 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import MovieCard from '../components/MovieCard.astro';
+import Sidebar from '../components/Sidebar.astro';
+import AdSlot from '../components/AdSlot.astro';
+import movies from '../data/moviesLoader.js';
+const sorted=[...movies].sort((a,b)=>new Date(b.releaseDate||0).getTime()-new Date(a.releaseDate||0).getTime());
+const featured=sorted.slice(0,6);
+---
+<Layout canonicalPath="/">
+  <Header /><AdSlot name="headerBanner" />
+  <main class="container layout"><div class="main-col">
+    <section class="intro"><p class="eyebrow">VERTICAL DRAMA HUB</p><h1>Watch Full Short Drama Series</h1><p>Browse short-form drama stories and open a dedicated page to watch the configured full video in one place.</p></section>
+    {featured.length>0 && <section class="featured" aria-label="Featured short dramas">{featured.map((m)=><a class="feat-item" href={`/drama/${m.slug}/`}><img src={m.bannerImage||m.posterImage} alt={m.title} width="640" height="360" fetchpriority="high" /><div class="feat-overlay"><strong>{m.title}</strong><span>{m.episodesCount>1?`${m.episodesCount} episodes`:'Full video'}</span></div></a>)}</section>}
+    <section class="section-block"><h2 class="section-title">Latest Short Dramas</h2><div class="grid">{sorted.map((movie)=><MovieCard movie={movie}/>)}</div></section>
+  </div><Sidebar /></main>
+  <AdSlot name="footerBanner" /><Footer />
+</Layout>
+<style>
+.layout{display:grid;grid-template-columns:1fr 300px;gap:28px;padding:24px 20px 40px}.intro{padding:8px 0 22px}.eyebrow{font-size:.72rem;font-weight:800;letter-spacing:.08em;color:var(--brand);margin:0 0 5px}.intro h1{margin:0 0 8px;font-size:1.7rem}.intro p{margin:0;color:var(--text-soft)}
+.featured{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:30px}.feat-item{position:relative;aspect-ratio:16/9;border-radius:10px;overflow:hidden;background:var(--bg-soft)}.feat-item img{width:100%;height:100%;object-fit:cover}.feat-overlay{position:absolute;inset:auto 0 0;padding:28px 10px 10px;background:linear-gradient(transparent,rgba(0,0,0,.75));color:#fff;display:flex;flex-direction:column;gap:3px}.feat-overlay strong{font-size:.82rem}.feat-overlay span{font-size:.7rem;opacity:.9}
+.section-title{font-size:1.15rem;margin:0 0 16px;padding-left:10px;border-left:4px solid var(--brand)}.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:16px}
+@media(max-width:900px){.layout{grid-template-columns:1fr}}@media(max-width:650px){.featured{grid-template-columns:repeat(2,1fr)}}
+</style>

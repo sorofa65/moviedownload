@@ -1,0 +1,8 @@
+---
+import movies from '../../data/moviesLoader.js';
+export function getStaticPaths() {
+  return movies.map((drama) => ({ params: { slug: drama.slug }, props: { drama } }));
+}
+const { drama } = Astro.props;
+return Astro.redirect(`/drama/${drama.slug}/`, 301);
+---

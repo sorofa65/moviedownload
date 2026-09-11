@@ -1,0 +1,16 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import site from '../data/site.json';
+---
+<Layout title="Disclaimer" canonicalPath="/disclaimer/">
+  <Header />
+  <main class="container page">
+    <h1>Disclaimer</h1>
+    <p>{site.name} is a short-drama video catalog. Video playback is supplied through the external embed URL configured in each JSON record. Only publish videos, images, and embeds that you own or are legally authorized to use.</p>
+    <p>The site does not provide download links, DRM bypasses, or instructions for accessing unauthorized copies.</p>
+  </main>
+  <Footer />
+</Layout>
+<style>.page{padding:32px 0 60px;max-width:720px}</style>
