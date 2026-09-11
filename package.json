@@ -4,8 +4,9 @@
   "version": "1.0.0",
   "scripts": {
     "dev": "astro dev",
-    "build": "astro build",
-    "preview": "astro preview"
+    "build": "npm run validate:content && astro build",
+    "preview": "astro preview",
+    "validate:content": "node scripts/validate-content.mjs"
   },
   "dependencies": {
     "astro": "^4.16.0"
