@@ -8,7 +8,7 @@
     "enabled": true,
     "_comment": "Controls the interstitial page that opens in a NEW TAB when someone clicks Watch Now, before sending them to the real platform. The original site tab stays open on the movie page. If adsEnabled (above) is false, this is skipped entirely regardless of this value.",
     "countdownSeconds": 5,
-    "code": "https://www.profitableratecpmnetwork.com/grwy9rvvgm?key=1f4035a06094a1a8e34679b4b26e487c"
+    "code": "<script type=\"text/javascript\" src=\"https://www.profitableratecpmnetwork.com/grwy9rvvgm?key=1f4035a06094a1a8e34679b4b26e487c\"></script>"
   },
 
   "networkScripts": {
