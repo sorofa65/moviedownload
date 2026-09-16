@@ -8,13 +8,13 @@
     "enabled": true,
     "_comment": "Controls the interstitial page that opens in a NEW TAB when someone clicks Watch Now, before sending them to the real platform. The original site tab stays open on the movie page. If adsEnabled (above) is false, this is skipped entirely regardless of this value.",
     "countdownSeconds": 5,
-    "code": "<script type=\"text/javascript\" src=\"https://www.profitableratecpmnetwork.com/grwy9rvvgm?key=1f4035a06094a1a8e34679b4b26e487c\"></script>"
+    "code": "https://www.profitableratecpmnetwork.com/grwy9rvvgm?key=1f4035a06094a1a8e34679b4b26e487c"
   },
 
   "networkScripts": {
     "_comment": "Global network scripts (e.g. Adsterra 'Social Bar' or PropellerAds push script) that load once site-wide, placed before </body>.",
     "global": [
-      "<script src="https://pl31236811.profitableratecpmnetwork.com/4c/25/cf/4c25cfdfecbbc1d902033a55db50752a.js"></script>"
+      "<script src=\"https://pl31236811.profitableratecpmnetwork.com/4c/25/cf/4c25cfdfecbbc1d902033a55db50752a.js\"></script>"
     ]
   },
 
