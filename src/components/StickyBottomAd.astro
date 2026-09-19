@@ -1,0 +1,29 @@
+---
+import ads from '../data/ads.json';
+const cfg = ads.stickyBottomAd;
+const show = ads.adsEnabled && cfg?.enabled && cfg?.code;
+---
+{show && (
+  <div id="sticky-bottom-ad" class="sticky-bottom-ad">
+    <button id="sticky-bottom-close" class="close" aria-label="Close ad">&times;</button>
+    <span class="ad-tag">Advertisement</span>
+    <Fragment set:html={cfg.code} />
+  </div>
+)}
+
+<script>
+  document.getElementById('sticky-bottom-close')?.addEventListener('click', () => {
+    document.getElementById('sticky-bottom-ad')?.remove();
+  });
+</script>
+
+<style>
+  .sticky-bottom-ad {
+    position: fixed; left: 0; right: 0; bottom: 0; z-index: 150;
+    background: #fff; border-top: 1px solid var(--border);
+    box-shadow: 0 -4px 16px rgba(0,0,0,.08);
+    padding: 8px 40px 8px 12px; text-align: center;
+  }
+  .close { position: absolute; right: 10px; top: 50%; transform: translateY(-50%); background: var(--bg-soft); border: 1px solid var(--border); border-radius: 50%; width: 24px; height: 24px; cursor: pointer; color: var(--text-soft); }
+  .ad-tag { display: block; font-size: .65rem; text-transform: uppercase; color: var(--text-soft); margin-bottom: 2px; }
+</style>

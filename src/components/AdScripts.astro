@@ -1,0 +1,7 @@
+---
+// Site-wide ad network scripts (e.g. Adsterra Social Bar, PropellerAds push).
+// Add raw <script> snippets as strings in ads.json -> networkScripts.global
+import ads from '../data/ads.json';
+const scripts = ads.adsEnabled ? (ads.networkScripts?.global || []).filter(Boolean) : [];
+---
+{scripts.map((s) => <Fragment set:html={s} />)}
