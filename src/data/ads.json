@@ -100,10 +100,10 @@
   "responsiveAds": {
     "_note": "Recommended lightweight inventory. Use one top slider, one desktop rail per side, one in-content/native unit, and one small mobile sticky. Avoid stacking too many overlays.",
     "desktopSideRails": {
-      "enabled": false,
+      "enabled": true,
       "minViewportWidth": 1280,
       "leftCode": "",
-      "rightCode": "",
+      "rightCode": "<script type=\"text/javascript\">atOptions = { 'key' : 'f56d2abb9385496b1a55a9c62e87bf59', 'format' : 'iframe', 'height' : 250, 'width' : 300, 'params' : {} };</script><script type=\"text/javascript\" src=\"https://www.highrevenueformat.com/f56d2abb9385496b1a55a9c62e87bf59/invoke.js\"></script>",
       "label": "Advertisement"
     },
     "mobileSlide": {
