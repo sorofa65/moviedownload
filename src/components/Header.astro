@@ -1,0 +1,103 @@
+---
+import site from '../data/site.json';
+---
+<header class="site-header">
+  <div class="container inner">
+    <a href="/" class="logo">
+      <span class="logo-main">{site.logoText}</span><span class="logo-accent">{site.logoAccent}</span>
+    </a>
+
+    <nav id="main-menu" class="menu" aria-label="Main menu">
+      {site.menu.map((item) => (
+        <a href={item.href}>{item.label}</a>
+      ))}
+      <a class="browse-link" href="/category/short-drama/">Browse dramas</a>
+    </nav>
+
+    <a class="browse-link desktop-browse" href="/category/short-drama/">Browse dramas</a>
+
+    <button id="menu-toggle" class="menu-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="main-menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<script>
+  const toggle = document.getElementById('menu-toggle');
+  const menu = document.getElementById('main-menu');
+  toggle?.addEventListener('click', () => {
+    const isOpen = menu?.classList.toggle('open');
+    toggle.classList.toggle('open', !!isOpen);
+    toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  });
+  menu?.querySelectorAll('a').forEach((a) => a.addEventListener('click', () => {
+    menu.classList.remove('open');
+    toggle?.classList.remove('open');
+    toggle?.setAttribute('aria-expanded', 'false');
+  }));
+</script>
+
+<style>
+  .site-header {
+    background: #fff;
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .inner {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    height: 68px;
+  }
+  .logo { font-size: 1.5rem; font-weight: 800; letter-spacing: -.5px; flex-shrink: 0; }
+  .logo-main { color: var(--text); }
+  .logo-accent { color: var(--brand); }
+
+  .menu { display: flex; align-items: center; gap: 18px; flex: 1; }
+  .menu a {
+    font-size: .95rem;
+    font-weight: 500;
+    color: var(--text-soft);
+    padding: 6px 2px;
+    border-bottom: 2px solid transparent;
+  }
+  .menu a:hover { color: var(--text); border-color: var(--brand); }
+
+  .browse-link { font-size: .9rem; font-weight: 600; color: var(--text-soft); }
+  .browse-link:hover { color: var(--brand); }
+
+  .menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    width: 34px; height: 34px;
+    background: none; border: none; cursor: pointer;
+    margin-left: auto;
+  }
+  .menu-toggle span {
+    display: block; height: 2px; width: 100%;
+    background: var(--text); border-radius: 2px;
+    transition: transform .2s ease, opacity .2s ease;
+  }
+  .menu-toggle.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .menu-toggle.open span:nth-child(2) { opacity: 0; }
+  .menu-toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+  @media (max-width: 780px) {
+    .desktop-browse { display: none; }
+    .menu-toggle { display: flex; }
+    .menu {
+      position: absolute; top: 68px; left: 0; right: 0;
+      background: #fff; border-bottom: 1px solid var(--border);
+      flex-direction: column; align-items: stretch; gap: 0;
+      padding: 8px 20px 16px;
+      max-height: 0; overflow: hidden;
+      transition: max-height .25s ease;
+    }
+    .menu.open { max-height: 400px; }
+    .menu a { padding: 12px 0; border-bottom: 1px solid var(--border); }
+  }
+</style>
