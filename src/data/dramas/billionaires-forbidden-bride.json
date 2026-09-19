@@ -1,0 +1,28 @@
+{
+  "slug": "billionaires-forbidden-bride",
+  "title": "Billionaire's Forbidden Bride",
+  "status": "completed",
+  "isNew": false,
+  "isFree": true,
+  "language": "English",
+  "genre": ["Romance", "Drama"],
+  "tags": ["Watch Free", "Ladies'", "Marriage"],
+  "releaseDate": "2026-07-12",
+  "updatedAt": "2026-08-02",
+  "totalEpisodes": 24,
+  "freeEpisodes": 24,
+  "posterImage": "/images/dramas/billionaires-forbidden-bride/poster.jpg",
+  "bannerImage": "/images/dramas/billionaires-forbidden-bride/banner.jpg",
+  "description": "A marriage of convenience turns into something neither of them expected — until his ruthless family tries to tear them apart. Fully free, all 24 episodes available now.",
+  "fullVideoUrl": "https://your-affiliate-or-download-link.example.com/billionaires-forbidden-bride",
+  "episodes": [
+    { "number": 1, "title": "Episode 1", "videoUrl": "https://iframe-video-host.example.com/embed/forbidden-bride/ep-1", "locked": false },
+    { "number": 2, "title": "Episode 2", "videoUrl": "https://iframe-video-host.example.com/embed/forbidden-bride/ep-2", "locked": false },
+    { "number": 3, "title": "Episode 3", "videoUrl": "https://iframe-video-host.example.com/embed/forbidden-bride/ep-3", "locked": false },
+    { "number": 4, "title": "Episode 4", "videoUrl": "https://iframe-video-host.example.com/embed/forbidden-bride/ep-4", "locked": false },
+    { "number": 5, "title": "Episode 5", "videoUrl": "https://iframe-video-host.example.com/embed/forbidden-bride/ep-5", "locked": false },
+    { "number": 6, "title": "Episode 6", "videoUrl": "https://iframe-video-host.example.com/embed/forbidden-bride/ep-6", "locked": false }
+  ],
+  "seoTitle": "Billionaire's Forbidden Bride — Watch All Episodes Free",
+  "seoDescription": "Watch Billionaire's Forbidden Bride online free. All episodes available now — a marriage of convenience that becomes an all-out family war."
+}
