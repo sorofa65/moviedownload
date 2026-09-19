@@ -1,0 +1,24 @@
+---
+import ads from '../data/ads.json';
+const cfg = ads.responsiveAds?.desktopSideRails;
+const show = ads.adsEnabled && cfg?.enabled;
+---
+{show && (
+  <div class="ad-rails" aria-hidden="false">
+    {cfg.leftCode && <aside class="rail rail-left" aria-label="Advertisement">
+      <span>Advertisement</span><Fragment set:html={cfg.leftCode} />
+    </aside>}
+    {cfg.rightCode && <aside class="rail rail-right" aria-label="Advertisement">
+      <span>Advertisement</span><Fragment set:html={cfg.rightCode} />
+    </aside>}
+  </div>
+)}
+<style>
+.ad-rails{display:none}
+@media(min-width:1280px){
+  .ad-rails{display:block}
+  .rail{position:fixed;top:50%;transform:translateY(-50%);z-index:40;width:160px;min-height:120px;text-align:center;overflow:hidden}
+  .rail-left{left:8px}.rail-right{right:8px}
+  .rail span{display:block;font-size:10px;color:var(--text-soft);margin-bottom:4px;text-transform:uppercase;letter-spacing:.06em}
+}
+</style>

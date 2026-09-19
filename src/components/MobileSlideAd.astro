@@ -1,0 +1,46 @@
+---
+import ads from '../data/ads.json';
+const cfg = ads.responsiveAds?.mobileSlide;
+const show = ads.adsEnabled && cfg?.enabled && (cfg?.code || cfg?.image);
+---
+{show && (
+  <div id="mobile-slide-ad" class="mobile-slide-ad" role="complementary" aria-label="Advertisement">
+    <button id="mobile-slide-close" class="close" aria-label="Close advertisement">×</button>
+    <span class="ad-tag">Advertisement</span>
+    <div class="mount">
+      {cfg.image && cfg.link ? <a href={cfg.link} target="_blank" rel="nofollow sponsored noopener"><img src={cfg.image} alt="Advertisement" loading="lazy" /></a> : null}
+      {cfg.code && <Fragment set:html={cfg.code} />}
+    </div>
+  </div>
+)}
+<script define:vars={{
+  delay: (cfg?.delaySeconds || 12) * 1000,
+  interval: (cfg?.intervalSeconds || 55) * 1000,
+  visible: (cfg?.visibleSeconds || 7) * 1000,
+  maxShows: cfg?.maxShowsPerSession || 4
+}}>
+  const el=document.getElementById('mobile-slide-ad');
+  if(el){
+    let count=Number(sessionStorage.getItem('mobileAdShows')||0), hideTimer;
+    const close=()=>{el.classList.remove('show');clearTimeout(hideTimer)};
+    const showAd=()=>{
+      if(count>=maxShows)return;
+      count++;sessionStorage.setItem('mobileAdShows',String(count));
+      el.classList.add('show');clearTimeout(hideTimer);
+      hideTimer=setTimeout(close,visible);
+    };
+    setTimeout(showAd,delay);
+    setInterval(showAd,interval);
+    document.getElementById('mobile-slide-close')?.addEventListener('click',close);
+  }
+</script>
+<style>
+.mobile-slide-ad{display:none}
+@media(max-width:767px){
+  .mobile-slide-ad{position:fixed;left:8px;right:8px;bottom:8px;z-index:180;background:#fff;border:1px solid var(--border);border-radius:12px;box-shadow:0 8px 30px rgba(0,0,0,.14);padding:6px 34px 6px 6px;transform:translateY(calc(100% + 20px));opacity:0;transition:transform .28s ease,opacity .28s ease;overflow:hidden}
+  .mobile-slide-ad.show{transform:translateY(0);opacity:1}
+  .mobile-slide-ad .ad-tag{font-size:9px;color:var(--text-soft);text-transform:uppercase;display:block;text-align:center;margin-bottom:2px}
+  .mobile-slide-ad img{width:100%;max-height:100px;object-fit:cover;border-radius:7px}
+  .close{position:absolute;right:7px;top:7px;width:25px;height:25px;border:1px solid var(--border);background:#fff;border-radius:50%;cursor:pointer;font-size:17px;line-height:20px;z-index:2}
+}
+</style>

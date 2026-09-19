@@ -1,0 +1,16 @@
+---
+import ads from '../data/ads.json';
+export interface Props { watchUrl?: string; watchLabel?: string }
+const { watchUrl, watchLabel = 'Watch Now' } = Astro.props;
+const smart = ads.ctaButtons?.smartClick;
+const refer = ads.ctaButtons?.refer;
+---
+<div class="actions">
+  {watchUrl && <a class="action watch" href={watchUrl} target="_blank" rel="noopener">{watchLabel}</a>}
+  {ads.adsEnabled && smart?.enabled && smart.url && <a class="action smart" href={smart.url} target={smart.target || '_blank'} rel={smart.rel || 'nofollow sponsored noopener'}>{smart.label || 'Smart Click'}</a>}
+  {refer?.enabled && refer.url && <a class="action refer" href={refer.url} target={refer.target || '_blank'} rel={refer.rel || 'nofollow sponsored noopener'}>{refer.label || 'Refer & Earn'}</a>}
+</div>
+<style>
+.actions{display:flex;flex-wrap:wrap;gap:9px;margin:16px 0}.action{display:inline-flex;align-items:center;justify-content:center;min-height:42px;padding:10px 16px;border-radius:9px;font-weight:800;font-size:.86rem;border:1px solid transparent;transition:.16s ease}.watch{background:var(--brand);color:#fff}.smart{background:var(--smart);color:#fff}.refer{background:var(--refer);color:#fff}.action:hover{transform:translateY(-1px);filter:brightness(.97)}
+@media(max-width:520px){.actions{display:grid;grid-template-columns:1fr}.action{width:100%}}
+</style>

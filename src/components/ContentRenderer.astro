@@ -1,0 +1,37 @@
+---
+export interface Props { blocks?: any[] }
+const { blocks = [] } = Astro.props;
+---
+{blocks.length > 0 && (
+  <div class="content-renderer">
+    {blocks.map((block) => {
+      const type = block?.type || 'paragraph';
+      if (type === 'heading') return <h2>{block.text}</h2>;
+      if (type === 'subheading') return <h3>{block.text}</h3>;
+      if (type === 'paragraph') return <p>{block.text}</p>;
+      if (type === 'image') return <figure><img src={block.src} alt={block.alt || ''} loading="lazy" decoding="async" /><figcaption>{block.caption || ''}</figcaption></figure>;
+      if (type === 'link') return <p><a class="content-link" href={block.url} target={block.target || '_blank'} rel={block.rel || 'noopener'}>{block.text || block.url}</a></p>;
+      if (type === 'divider') return <hr />;
+      if (type === 'html') return <div set:html={block.html || ''} />;
+      if (type === 'ad') return (
+        <div class="content-ad" aria-label="Advertisement">
+          <span>Advertisement</span>
+          {block.image && block.url ? <a href={block.url} target={block.target || '_blank'} rel={block.rel || 'nofollow sponsored noopener'}><img src={block.image} alt={block.alt || 'Advertisement'} loading="lazy" /></a> : null}
+          {block.html ? <Fragment set:html={block.html} /> : null}
+        </div>
+      );
+      return null;
+    })}
+  </div>
+)}
+<style>
+.content-renderer{font-size:1rem;line-height:1.75}
+.content-renderer h2{font-size:1.25rem;margin:24px 0 10px}
+.content-renderer h3{font-size:1.05rem;margin:20px 0 8px}
+.content-renderer p{margin:0 0 14px;color:var(--text)}
+.content-renderer figure{margin:18px 0}.content-renderer figure img{width:100%;height:auto;border-radius:10px}.content-renderer figcaption{font-size:.75rem;color:var(--text-soft);margin-top:5px}
+.content-link{color:var(--brand);font-weight:700}.content-renderer hr{border:0;border-top:1px solid var(--border);margin:22px 0}
+.content-ad{margin:20px 0;padding:8px;background:var(--bg-soft);border:1px solid var(--border);border-radius:10px;text-align:center;overflow:hidden}
+.content-ad>span{display:block;font-size:.65rem;color:var(--text-soft);text-transform:uppercase;letter-spacing:.06em;margin-bottom:5px}
+.content-ad img{display:block;max-width:100%;height:auto;margin:0 auto;border-radius:7px}
+</style>
