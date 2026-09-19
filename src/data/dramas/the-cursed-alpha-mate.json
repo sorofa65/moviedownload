@@ -1,0 +1,28 @@
+{
+  "slug": "the-cursed-alpha-mate",
+  "title": "The Cursed Alpha's Mate",
+  "status": "ongoing",
+  "isNew": true,
+  "isFree": true,
+  "language": "English",
+  "genre": ["Fantasy", "Romance", "Werewolf"],
+  "tags": ["Hot Picks", "Fantasy", "Sweetness"],
+  "releaseDate": "2026-09-15",
+  "updatedAt": "2026-09-18",
+  "totalEpisodes": 40,
+  "freeEpisodes": 8,
+  "posterImage": "/images/dramas/the-cursed-alpha-mate/poster.jpg",
+  "bannerImage": "/images/dramas/the-cursed-alpha-mate/banner.jpg",
+  "description": "Cast out of her pack for a curse she never asked for, Luna finds the one alpha powerful enough to break it — but claiming her could cost him everything.",
+  "fullVideoUrl": "https://your-affiliate-or-download-link.example.com/the-cursed-alpha-mate",
+  "episodes": [
+    { "number": 1, "title": "Episode 1", "videoUrl": "https://iframe-video-host.example.com/embed/alpha-mate/ep-1", "locked": false },
+    { "number": 2, "title": "Episode 2", "videoUrl": "https://iframe-video-host.example.com/embed/alpha-mate/ep-2", "locked": false },
+    { "number": 3, "title": "Episode 3", "videoUrl": "https://iframe-video-host.example.com/embed/alpha-mate/ep-3", "locked": false },
+    { "number": 4, "title": "Episode 4", "videoUrl": "https://iframe-video-host.example.com/embed/alpha-mate/ep-4", "locked": false },
+    { "number": 5, "title": "Episode 5", "videoUrl": "", "locked": true, "smartLink": "https://your-smartlink-network.example.com/alpha-mate-ep5" },
+    { "number": 6, "title": "Episode 6", "videoUrl": "", "locked": true, "smartLink": "https://your-smartlink-network.example.com/alpha-mate-ep6" }
+  ],
+  "seoTitle": "The Cursed Alpha's Mate — Watch New Episodes Online",
+  "seoDescription": "Watch The Cursed Alpha's Mate online. A cursed omega, a forbidden bond, and an alpha willing to risk it all — new episodes added regularly."
+}
