@@ -48,7 +48,7 @@
       "code": "<script type=\"text/javascript\">atOptions = { 'key' : '96fe77361382a2a18787c9dc1aec76c1', 'format' : 'iframe', 'height' : 90, 'width' : 728, 'params' : {} };</script><script type=\"text/javascript\" src=\"https://www.highrevenueformat.com/96fe77361382a2a18787c9dc1aec76c1/invoke.js\"></script>"
     },
     "homeBetweenRows": {
-      "enabled": false,
+      "enabled": true,
       "label": "Native/banner ad injected after every 8 movie cards on homepage",
       "code": "<script async=\"async\" data-cfasync=\"false\" src=\"https://pl31236869.profitableratecpmnetwork.com/78c30c2e488e45a6a9e7f2905046fe67/invoke.js\"></script><div id=\"container-78c30c2e488e45a6a9e7f2905046fe67\"></div>",
       "frequency": 8
@@ -59,7 +59,7 @@
       "code": "<script type=\"text/javascript\">atOptions = { 'key' : 'f56d2abb9385496b1a55a9c62e87bf59', 'format' : 'iframe', 'height' : 250, 'width' : 300, 'params' : {} };</script><script type=\"text/javascript\" src=\"https://www.highrevenueformat.com/f56d2abb9385496b1a55a9c62e87bf59/invoke.js\"></script>"
     },
     "inArticleTop": {
-      "enabled": true,
+      "enabled": false,
       "label": "Ad shown right above the review text",
       "code": "<script async=\"async\" data-cfasync=\"false\" src=\"https://pl31236869.profitableratecpmnetwork.com/78c30c2e488e45a6a9e7f2905046fe67/invoke.js\"></script><div id=\"container-78c30c2e488e45a6a9e7f2905046fe67\"></div>"
     },
@@ -114,7 +114,7 @@
       "maxShowsPerSession": 4,
       "image": "",
       "link": "",
-      "code": "",
+      "code": "<script type=\"text/javascript\">atOptions = { 'key' : 'f56d2abb9385496b1a55a9c62e87bf59', 'format' : 'iframe', 'height' : 250, 'width' : 300, 'params' : {} };</script><script type=\"text/javascript\" src=\"https://www.highrevenueformat.com/f56d2abb9385496b1a55a9c62e87bf59/invoke.js\"></script>",
       "label": "Advertisement"
     }
   },
