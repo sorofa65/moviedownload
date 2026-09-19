@@ -1,0 +1,14 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import MovieCard from '../../components/MovieCard.astro';
+import AdSlot from '../../components/AdSlot.astro';
+import movies from '../../data/moviesLoader.js';
+export function getStaticPaths(){const categories=[...new Set(movies.map((m)=>m.category))];return categories.map((category)=>({params:{category},props:{movies:movies.filter((m)=>m.category===category)}}));}
+const {category}=Astro.params;const {movies:categoryMovies}=Astro.props;const label=category.replace(/-/g,' ').replace(/\b\w/g,(c)=>c.toUpperCase());
+---
+<Layout title={`${label} Series`} description={`Browse ${label} short-drama series and full-video pages.`} canonicalPath={`/category/${category}/`}>
+  <Header /><main class="container"><nav class="crumbs" aria-label="Breadcrumb"><a href="/">Home</a><span>›</span><span>{label}</span></nav><h1>{label}</h1><p class="intro">Short-form drama series collected in one browseable catalog.</p><AdSlot name="headerBanner" /><div class="grid">{categoryMovies.map((movie:any)=><MovieCard movie={movie}/>)}</div></main><Footer />
+</Layout>
+<style>main{padding:20px 20px 50px}.crumbs{font-size:.8rem;color:var(--text-soft);display:flex;gap:8px}.intro{color:var(--text-soft)}h1{margin-bottom:6px}.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:18px;padding-bottom:40px}</style>
