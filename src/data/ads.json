@@ -11,7 +11,7 @@
   "networkScripts": {
     "_comment": "Global network scripts (e.g. Adsterra 'Social Bar' or PropellerAds push script) that load once site-wide, placed before </body>.",
     "global": [
-      "<script src=\"https://pl31236811.profitableratecpmnetwork.com/4c/25/cf/4c25cfdfecbbc1d902033a55db50752a.js\"></script>"
+      ""
     ]
   },
   "telegramPromo": {
@@ -64,7 +64,7 @@
       "code": "<script async=\"async\" data-cfasync=\"false\" src=\"https://pl31236869.profitableratecpmnetwork.com/78c30c2e488e45a6a9e7f2905046fe67/invoke.js\"></script><div id=\"container-78c30c2e488e45a6a9e7f2905046fe67\"></div>"
     },
     "inArticleBottom": {
-      "enabled": true,
+      "enabled": false,
       "label": "Ad shown right below the review text, above watch links",
       "code": "<script type=\"text/javascript\">atOptions = { 'key' : 'f56d2abb9385496b1a55a9c62e87bf59', 'format' : 'iframe', 'height' : 250, 'width' : 300, 'params' : {} };</script><script type=\"text/javascript\" src=\"https://www.highrevenueformat.com/f56d2abb9385496b1a55a9c62e87bf59/invoke.js\"></script>"
     },
@@ -107,7 +107,7 @@
       "label": "Advertisement"
     },
     "mobileSlide": {
-      "enabled": false,
+      "enabled": true,
       "delaySeconds": 12,
       "intervalSeconds": 55,
       "visibleSeconds": 7,
