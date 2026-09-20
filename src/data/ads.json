@@ -86,19 +86,19 @@
   "ctaButtons": {
     "smartClick": {
       "enabled": true,
-      "label": "Watch Full Drama",
+      "label": "Download for iPhone",
+      "url": "https://itunes.apple.com/app/id6450243852",
+      "target": "_blank",
+      "rel": "nofollow sponsored noopener",
+      "note": "Direct link to MoboReels app on Apple App Store."
+    },
+    "refer": {
+      "enabled": true,
+      "label": "Download for Android",
       "url": "https://play.google.com/store/apps/details?id=com.changdu.mobovideo",
       "target": "_blank",
       "rel": "nofollow sponsored noopener",
       "note": "Direct link to MoboReels app on Google Play Store."
-    },
-    "refer": {
-      "enabled": true,
-      "label": "Become a Creator & Earn",
-      "url": "https://mckoc.cdreader.com/#/regist?invCode=V732700",
-      "target": "_blank",
-      "rel": "nofollow sponsored noopener",
-      "note": "Creator registration referral link with code V732700."
     }
   },
   "responsiveAds": {
