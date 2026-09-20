@@ -86,7 +86,7 @@
   "ctaButtons": {
     "smartClick": {
       "enabled": true,
-      "label": "Download for iPhone",
+      "label": "Download for iPhone App",
       "url": "https://itunes.apple.com/app/id6450243852",
       "target": "_blank",
       "rel": "nofollow sponsored noopener",
@@ -94,7 +94,7 @@
     },
     "refer": {
       "enabled": true,
-      "label": "Download for Android",
+      "label": "Download for Android App",
       "url": "https://play.google.com/store/apps/details?id=com.changdu.mobovideo",
       "target": "_blank",
       "rel": "nofollow sponsored noopener",
