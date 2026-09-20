@@ -39,7 +39,7 @@
     "_comment": "A banner that slides down from the top every `intervalSeconds`, stays visible for `visibleSeconds`, then slides back up — repeats on a timer instead of appearing once. Good for high-impression placements without covering content permanently.",
     "intervalSeconds": 45,
     "visibleSeconds": 8,
-    "code": "<script type=\"text/javascript\">atOptions = { 'key' : '96fe77361382a2a18787c9dc1aec76c1', 'format' : 'iframe', 'height' : 90, 'width' : 728, 'params' : {} };</script><script type=\"text/javascript\" src=\"https://www.highrevenueformat.com/96fe77361382a2a18787c9dc1aec76c1/invoke.js\"></script>"
+    "code": "<script type=\"text/javascript\">atOptions = { 'key' : 'd184c10ebfb28c8915cf71457f326965', 'format' : 'iframe', 'height' : 50, 'width' : 320, 'params' : {} };</script><script type=\"text/javascript\" src=\"https://www.highrevenueformat.com/d184c10ebfb28c8915cf71457f326965/invoke.js\"></script>"
   },
   "slots": {
     "headerBanner": {
