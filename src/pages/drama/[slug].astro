@@ -31,23 +31,29 @@ const relatedMovies = allMovies
   .filter((m) => m.slug !== movie.slug)
   .slice(0, 6);
 
-// uploadDate-কে ISO 8601 (Timezone সহ) ফরম্যাটে কনভার্ট করার ফাংশন
-function formatIsoDate(dateStr) {
-  if (!dateStr) return new Date().toISOString();
-  try {
-    const d = new Date(dateStr);
-    if (isNaN(d.getTime())) {
-      return new Date().toISOString();
-    }
-    return d.toISOString();
-  } catch (e) {
-    return new Date().toISOString();
+// uploadDate কে অটোমেটিক Timezone সহ ISO 8601 ফরম্যাটে ফিক্স করার ফাংশন
+function getValidIsoDate(dateVal) {
+  if (!dateVal) return new Date().toISOString();
+  let str = String(dateVal).trim();
+  
+  // যদি শুধু YYYY-MM-DD থাকে (যেমন: 2026-09-20)
+  if (/^\d{4}-\d{2}-\d{2}$/.test(str)) {
+    return `${str}T00:00:00Z`;
   }
+  
+  try {
+    const d = new Date(str);
+    if (!isNaN(d.getTime())) {
+      return d.toISOString();
+    }
+  } catch (e) {}
+  
+  return new Date().toISOString();
 }
 
-const formattedUploadDate = formatIsoDate(movie.uploadDate || movie.publishedAt || movie.createdAt);
+const formattedUploadDate = getValidIsoDate(movie.uploadDate || movie.publishedAt || movie.date);
 
-// Google-এর জন্য Schema.org / JSON-LD structured data
+// Google Search Console এর জন্য শোধন করা VideoObject Schema
 const videoSchema = {
   "@context": "https://schema.org",
   "@type": "VideoObject",
@@ -56,13 +62,40 @@ const videoSchema = {
   "thumbnailUrl": [movie.thumbnailUrl || movie.image || movie.poster],
   "uploadDate": formattedUploadDate,
   "embedUrl": movie.embedUrl || movie.videoUrl,
-  "contentUrl": movie.contentUrl || movie.videoUrl || movie.embedUrl,
   "url": Astro.url.href
+};
+
+// BreadcrumbList Schema
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": `${Astro.url.origin}/`
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Short Drama",
+      "item": `${Astro.url.origin}/category/short-drama/`
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": movie.title || movie.name,
+      "item": Astro.url.href
+    }
+  ]
 };
 ---
 
 <Layout title={movie.title} description={movie.description}>
+  {/* Structured Data Scripts with Timezone Fixed */}
   <script type="application/ld+json" set:html={JSON.stringify(videoSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
   
   <ResponsiveAdRails />
   <PeriodicTopAd />
